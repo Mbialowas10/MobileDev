@@ -1,9 +1,12 @@
 ---
 title: Resources
-has_children: true
-nav_order: 2
+has_children: false
+nav_order: 3
 ---
 
-Welcome to Mobile Development course notes.
+
 # Resources
+
+- [Modifier Use](https://chrisbanes.me/posts/always-provide-a-modifier/)
+- Adaptive design
 
