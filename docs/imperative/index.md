@@ -1,12 +1,14 @@
 ---
 title: Imperative Progamming in Android Studio
 layout: home
+has_children: true
 nav_order: 3
 ---
 
-## Traditional Android Development
+## Imperative (Traditional) Android Development
 
 ### Views
+![Views Image](img/views.png)
 - A piece of UI, think of it as a box.
 - For more, please see [Android Views Documentation](https://developer.android.com/develop/ui/views/layout/declaring-layout).
 - A view serves as the base class for UI components.
@@ -40,6 +42,12 @@ val label: TextView = findViewById(R.id.text)
 ### Demonstration of Widgets
 - For demonstration of widgets, please see:
   - [widgetsDemo on GitHub](https://github.com/Mbialowas10/widgetsDemo)
+
+
+
+
+
+
 - Added to GitHub for reference.
 
 ---
