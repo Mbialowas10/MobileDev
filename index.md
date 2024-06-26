@@ -23,6 +23,12 @@ Kotlin allows a programming to write code in any of the following paradigms
 - Scripting
 
 
+Note: to deploy locally use 
+ bundle exec jekyll serve
+
+ to post to git normal follow normal process
+
+
 
 ----
 
