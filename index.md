@@ -15,9 +15,10 @@ The Java Programming language has traditionally been used for Android developmen
 Kotlin gained more traction after **Google's announcement that Kotlin is the official language for Android Development**. Kotlin
 is a multiple purpose langauge e.g. code can be used to full-stack development, Mobile and front-end development.
 
-Kotlin code can be _converted_ to other source code in Android studio e.g you can convert Kotlin to Java code and vice versa.
+Kotlin code can be _converted_ to other source code in Android studio e.g you can convert Kotlin to Java code and vice versa. You can even 
+run Java alongside with Kotlin, however, I don't recommend doing so.
 
-Kotlin allows a programming to write code in any of the following paradigms
+Kotlin allows a developer to write code in any of the following paradigms
 - OOP
 - Functional Programming
 - Scripting
