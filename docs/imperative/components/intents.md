@@ -49,7 +49,7 @@ class ResultActivity : AppCompatActivity(){
         setContentView(R.layout.activity_result)
 
         // receive data
-        val bundle:Bundle? intent.extras
+        val bundle:Bundle? = intent.extras
         val name: Any? = bundle?.get(name)
         var tvResult: TextView? = null
 
