@@ -34,3 +34,11 @@ fun main(){
     println(newAndImprovedAddNumbersV2(2,3))
 }
 ```
+
+Output
+```
+Hello I'm a function without an newline
+86
+20
+5
+```
