@@ -45,8 +45,62 @@ upwards from child to parent when invoked. The entire UI tree is not recomposed 
 that read the data will need to be recomposed (redrawn to screen) making this operation itelligent by design.
 
 
+Recall, here is a stateful composable
+
+```
+// illustration of the state in the checkbox
+@Composable
+fun MyCheckBox(){
+    var checked by remember { mutableStateOf(false)}
+
+    Checkbox(
+        checked = checked, // default assignment
+        onCheckedChange = {checked = it}
+    )
+}
+```
+
+But wait it not a good idea to have state changed by a child composable.
+State should be passed down from a parent to child composable, often referred to as Unidirectional data flow.
+
+```
+// uni-directional data flow
+@Composable
+fun ParentComposableFunction(){
+    var isChecked by remember { mutableStateOf(false)} // state level variable
+
+    // call child composable
+    ChildComposableFunction(isChecked = isChecked, onCheckedChange = {isChecked = it})
+
+}
+
+@Composable
+fun ChildComposableFunction(isChecked: Boolean, onCheckedChange :(Boolean) -> Unit){
+
+    Checkbox(
+        checked = isChecked,
+        onCheckedChange = {checked -> onCheckedChange(checked) }
+    )
+}
+
+```
+
+Here we have hoisted the state out of composable function and placed it into a parent composable.
+We then pass an event handler reference to the child composable function. WHen the checkbox is checked
+it is able to update the state using the event handler reference.  This is an example of hosting the state
+in a composable function. **Please note** data is passed down the hierarchary and events bubble upwards.
+
+One advantage to having stateless composables is that composable become easier to resuse since their state is 
+managed elsewhere ie. in parenet composable.
 
 
+### State Hoisting ###
+
+This idea is an important one for several reasons. Since state lives in a parent composable, any changes
+to state can be passed down to other composables where required. The only requirement here is
+a ancestor (parent) common to both children exists.
+
+![Unidirectional Data Flow](img/dataFlow.png)
 
 
 
