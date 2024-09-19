@@ -43,7 +43,7 @@ Or
 after adding new Layout files and code files.
 
 - Intents make it easy to navigate from one screen to the next.
-```
+```kotlin
 btnConstraint.setOnClickListener{
                 val intent = Intent(this,ConstraintActivity::class.java)
                 startActivity(intent)

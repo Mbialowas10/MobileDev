@@ -47,7 +47,7 @@ that read the data will need to be recomposed (redrawn to screen) making this op
 
 Recall, here is a stateful composable
 
-```
+```kotlin
 // illustration of the state in the checkbox
 @Composable
 fun MyCheckBox(){
@@ -63,7 +63,7 @@ fun MyCheckBox(){
 But wait it not a good idea to have state changed by a child composable.
 State should be passed down from a parent to child composable, often referred to as Unidirectional data flow.
 
-```
+```kotlin
 // uni-directional data flow
 @Composable
 fun ParentComposableFunction(){

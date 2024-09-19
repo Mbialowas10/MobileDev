@@ -22,7 +22,7 @@ Composable functions by default are stateless ie. they don't remember or track
 data changes.
 
 Example of Stateless composable
-```
+```kotlin
 @Compose
 fun Counter(){
     var counter: Int = 0 
@@ -47,8 +47,8 @@ redrawing of the Counter composable.
 
 Turning the above into a stateful compable...
 
-```
- add remember keyword so that values can be tracked and remember across recomposition.
+```kotlin
+add remember keyword so that values can be tracked and remember across recomposition.
 
 var counter by remember{
     mutableStateOf(0)
@@ -58,8 +58,7 @@ var counter by remember{
 
 Stateful composable
 
-```
-
+```kotlin
 @Composable
 fun Counter(){
     

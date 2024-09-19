@@ -63,7 +63,7 @@ class ResultActivity : AppCompatActivity(){
 
 - Here we made use of Intent object to pass control over to a new screen. We can do the same with passing control over to a different app within the Android suite of programs.
 
-```
+```kotlin
  // 2. Intent - redirect user to another app e.g. a web page
  val btnCNN: Button = findViewById(R.id.btnCNN)
 

@@ -4,7 +4,7 @@ parent: JetPack Compose
 nav_order: 2
 ---
 
-```
+```kotlin
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -109,10 +109,5 @@ fun GridItem(itemText: String) {
         )
     }
 }
-
-
-
-
-
 
 ```

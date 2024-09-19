@@ -21,7 +21,7 @@ Primitives are non-object types.
 Strings can be printed out like in other languages by calling the println method 
 `println()`
 
-```
+```kotlin
     var game_title:String
     game_title = "Super Mario Wonder"
 
@@ -30,7 +30,7 @@ Strings can be printed out like in other languages by calling the println method
 
 String intrapolation can also be used to print out values of variables
 
-```
+```kotlin
   println("Nintendo Switch came about with ${game_title})  
 ```
 
@@ -40,7 +40,7 @@ What if you need to print multiplelines?
 
 Kotlin has a nice solution for this.
 
-```
+```kotlin
     fun main() {
         val multiLineString = """
             This is line 1

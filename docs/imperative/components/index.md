@@ -24,7 +24,7 @@ dependencies section contains 3rd party libraries you wish to add to your applic
 **Please note** the dependencies section of module level gradle file doesn't contain any library version numbers. To locate version information, please see libs.versions.toml
 
 build.gradle.kts
-```
+```kotlin
 dependencies {
 
     implementation(libs.androidx.core.ktx)
@@ -38,7 +38,7 @@ dependencies {
 }
 ```
 libs.versions.toml
-```
+```kotlin
 [versions]
 agp = "8.5.1"
 kotlin = "1.9.0"

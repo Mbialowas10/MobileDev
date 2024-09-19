@@ -10,7 +10,7 @@ Functions are `fun`! Sometimes they consume values and sometimes they return val
 to the caller.
 
 ## Fx Declaration
-```
+```kotlin
 // note this function is not consuming any values, but it is returning an Int
 fun addNumbers():Int{
     return 80+6
@@ -25,7 +25,7 @@ fun newAndImprovedAddNumbersV2(a:Int, b:Int) = (a+b)
 ```
 
 ## Invoking a function
-```
+```kotlin
 fun main(){
     print("Hello I'm a function without an newline")
     println()
