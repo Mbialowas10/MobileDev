@@ -126,3 +126,13 @@ dependencies {
         @Query("query") query: String) : Call<MovieData>
 } 
 ```
+
+**Things to Note:** 
+    1. Annotations are used here to, much like they are with Room library. Here 
+    we can see `@GET`, `@Query` being used within the MoviesService Interface.
+    2. dependencies have to be added to gradle files before libraries can be used.
+    3. When using Retrofit, Moshi, and JSON to Kotlin class plugin developer save alot of time from having to write code from scratch.
+
+Moshi is reponsisble for serializing and deserializing the data from API to kotlin objects. There are other similar tools on the market
+such as GSON.
+
