@@ -6,13 +6,13 @@ nav_order: 1
 
 ## Concise Lanaguage - less is more ##
 
-Kotlin lets you work with read-only and write variables. To make a variable
+Kotlin lets you work with read-only and write variables (aka as mutable variables). To make a variable
 read only use val and to make a variable writable use var. Kotlin recommends
 using **val** over **var** whenever possible. This often is a convention
 in functional programming.
 
 ```kotlin
-val pi = 3.1452 - constant as read-only
+val PI = 3.1452 - constant as read-only
 var variable = 10.0 - a typical variable ie. its value can change over time
 
 ```
@@ -86,7 +86,7 @@ println(num.javaClass)
 
 #### 2. Classes are Optional ####
 
-You can call a function without having it live within a Class (kinda like calling a static method). How cool is that?
+You can call a function without having it live within a Class (kinda like calling a static method). How cool is that? To do this, just create a kotlin file (file extension should be .kt) and add any number of functions to it. In this way the file acts kind of like a module.
 
 ```kotlin
 fun greetings(){

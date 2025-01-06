@@ -23,6 +23,27 @@ fun newAndImprovedAddNumbers(a:Int, b:Int):Int{
 // short-hand notation when returning values
 fun newAndImprovedAddNumbersV2(a:Int, b:Int) = (a+b)
 ```
+**Note:** a and b are referred to as named arguments ie. you can pass values to function
+as named arguements
+```kotlin
+    println(newAndImprovedAddNumbersV2(a=1,b=3)
+```
+The benefit to using named arguments that you don't have to pass arguments in a specific order.
+```kotlin
+    println(newAndImprovedAddNumbersV2(b=3,a=1)
+```
+
+## Default paramater values
+```kotlin
+    fun printArg(name:String = "N/A"){
+        println("Hello ${name}")
+    }
+
+    fun main() {
+        printArg("Mike")    // Hello Mike
+        printArg()          // Hello N/A
+    }
+```
 
 ## Invoking a function
 ```kotlin
