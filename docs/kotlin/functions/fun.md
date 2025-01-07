@@ -139,3 +139,24 @@ fun main() {
 ```
 **Note** use of vararg keyword can take any number of arguments
 
+## Higher Order Function HOF (aka a callback)
+
+These functions typically consume a function as a parameter or return a
+function or both.
+
+```kotlin
+fun main(){
+    val sub = {a:Int,b:Int -> a-b}
+    hof(sub)
+}
+
+fun hof(subtraction: (Int,Int)-> Int){
+    val result = subtraction(6,4) // this is a way to invoke function within hof function
+    println(result)
+}
+```
+
+**Note** this pattern is used alot in JetPack Compose. The use case for such 
+is often when working with event handlers and composable functions that emit UI
+within another composable function. 
+
