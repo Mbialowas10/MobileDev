@@ -151,3 +151,111 @@ private suspend fun saveDataToDatabase(database: AppDatabase, movies: List<Movie
 }
 ```
 
+## Performing CRUD operations
+
+CRUD stands for Create,Read,Update,Delete. These actions are performed against data
+residing in database. In our example, this data resides in SQLite database. Recall
+ROOM library is an **abstraction layer** on to of SQLite database. This affords developers
+the opportunity to leverage annoations and have code built behind the scenes by ROOM library
+namely, SQL code.
+
+In order to setup application to leverage CRUD, just add annotations along with function to 
+Data Access Object (DAO).
+
+```kotlin
+@Dao
+interface MovieDao {
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAllMovies(movies: List<Movie>)
+    // ROOM @annotations create SQL like statements on your behalf
+    // ie. INSERT INTO Movie(id,name, description....)
+
+    @Query("SELECT * FROM movies WHERE id = :id")
+    fun getMovieById(id: Int): Movie?
+
+    //@Query("DELETE FROM movies WHERE id = :id")
+    @Delete
+    fun deleteMovieById(movie: Movie)
+
+    @Query("SELECT * FROM movies")
+    fun getAllMovies(): List<Movie>
+
+    @Query("UPDATE movies SET title = :newTitle, overview = :newDescription WHERE id = :movieId")
+    suspend fun updateMovie(movieId: Int, newTitle: String, newDescription: String)
+
+}
+
+```
+
+In order to call functions defined in DAO object a database instance is required.
+
+```kotlin
+
+// EDIT BUTTON EVENT HANDLER
+Button(onClick = {
+    showEditDialog = true // trigger dialog
+}) {
+    Text(text = "Edit")
+}
+// DELETE BUTTON EVENT HANDLER
+Button(onClick = {
+    showDialog = true // trigger dialog
+}) {
+    Text(text = "Delete")
+}
+
+// HERE TWO DIALOG WINDOWS ARE CREATED FOR 2 
+// PROCESS: EDIT AND DELETE
+// Show DeleteMovieDialog when showDialog is true
+if (showDialog) {
+    DeleteMovieDialog(
+        movie = movieItem,
+        onDismiss = { showDialog = false },
+        onConfirmDelete = {
+            CoroutineScope(GlobalScope.coroutineContext).launch {
+                db.movieDoa().deleteMovieById(movieItem) // Use correct function call
+                // refresh movies
+                moviesManager.refreshMovies()
+            }
+            showDialog = false
+        }
+    )
+}
+// Show EditMovieDialog When Button is Clicked
+if (showEditDialog) {
+    EditMovieDialog(
+        movie = movieItem,
+        onDismiss = { showEditDialog = false },
+        onConfirmEdit = { newTitle, newDescription ->
+            CoroutineScope(GlobalScope.coroutineContext).launch {
+                movieItem.id?.let { db.movieDoa().updateMovie(it, newTitle, newDescription) } // Update in DB
+                moviesManager.refreshMovies() // Refresh movie list
+            }
+            showEditDialog = false
+        }
+    )
+}
+
+```
+
+... Since movieDoa is contained inside the AppDatabase file by **Composition**, we are able to chain any
+of CRUD function calls.
+
+E.g 
+```kotlin
+//DELETE MOVIE
+db.movieDoa().deleteMovieById(movieItem)
+
+OR
+
+//UPDATE MOVIE
+movieItem.id?.let { db.movieDoa().updateMovie(it, newTitle, newDescription) } 
+```
+
+**NOTE:** The Elvis operator ?. (aka Safe or Lonely Operator) being used because of Kotlin type safety for NULL values.
+In short, ```kotlin
+updateMovie(it, newTitle,newDescription)
+```
+won't be called when movieItem is NULL or undefined. This migitates dealing with NULL Pointer exceptions in Kotlin.
+
