@@ -1,6 +1,6 @@
 ---
 title: Dependency Injection (DI) in JetPack Compose
-has_children: false
+has_children: true
 nav_order: 6
 ---
 
@@ -114,6 +114,10 @@ class MainActivity : ComponentActivity() {
 A few items to note about manual DI:
 1. Manual creation of dependencies (no @Inject, no Hilt)
 2. You manage how app is connected
+
+There has to be a better way?
+
+Click [Hilt](di) to learn more...
 
 
 
