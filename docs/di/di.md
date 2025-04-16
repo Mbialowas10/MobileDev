@@ -11,9 +11,9 @@ nav_order: 1
 
 ```kotlin
 plugins {
-    id 'com.android.application'
-    id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
+    id("com.android.application")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 dependencies {
@@ -35,6 +35,7 @@ buildscript {
 ```
 
 2. Create Interfaces and implementations - same as before
+
 ```kotlin
 interface Engine {
     fun type(): String
@@ -62,6 +63,7 @@ class MichelinTires @Inject constructor() : Tires {
 ```
 
 Car class 
+
 ```kotlin
 class Car @Inject constructor(
     private val engine: Engine,
@@ -92,6 +94,7 @@ abstract class CarModule {
 ```
 
 5. Inject Car into viewModel
+
 ```kotlin
 @HiltViewModel
 class CarViewModel @Inject constructor(
@@ -120,19 +123,21 @@ fun CarScreen(viewModel: CarViewModel = hiltViewModel()) {
 ```
 
 7. App setup for Hilt
+
 ```kotlin
 @HiltAndroidApp
 class CarApp : Application()
 ```
 
 8. Register app in Mainifest.xml
+
 ```kotlin
 <application
     android:name=".CarApp"
     ... >
-
 ```
 9. Run code from MainActivity
+
 ```kotlin
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
