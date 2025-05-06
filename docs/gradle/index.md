@@ -1,7 +1,7 @@
 ---
 title: Android Gradle Plugin (AGP)
 layout: home
-nav_order: 1
+nav_order: 2
 has_children: true
 ---
 
@@ -19,11 +19,7 @@ Next, just key in URL for gitHub link and press clone
 
 ![GitHub Repo Link](img/github_link.png)
 
-## Android Gradle Plugin (AGP)
 
-After the clone finishes, you may encounter an error message especially when 
-codebase you wish to review is writting in and older codebase or using an older version of 
-AGP.
 
 **AGP** stands for **Android Gradle Plugin** and it is responsible building, testing, and packing
 Android appliations using Gradle. Gradle is Android's offical build system. Some key features of AGP include:
@@ -42,14 +38,14 @@ The Gradle Wrapper (gradlew) ensures a consistent Gradle version across developm
 🔹 How to Use It:
 In your project's build.gradle.kts (Kotlin DSL) or build.gradle (Groovy), you declare the AGP dependency:
 
-```kotlin
+The version number should match the Android Gradle Plugin (AGP) version compatible with your Gradle version.
 
+```kotlin
 // build.gradle.kts (Kotlin)
 plugins {
     id("com.android.application") version "8.1.2" apply false
 }
 ```
-Version number should match the AGP version compatible with your Gradle version.
 
 ### Checking AGP Version:
 You can check the AGP version in Android Studio:
@@ -61,7 +57,7 @@ Look under Android Gradle Plugin Version.
 ### Updating AGP:
 To update, modify the version in your gradle.build file and sync the project.
 
-Back to task at hand. How do we resolve the following error?
+How would you resolve the following error?
 
 ![Incompatiable AGP](img/incompatiable_agp.png)
 
@@ -74,10 +70,18 @@ plugins {
 }
 ```
 
-alternatively, just add version information to existing gradle plugin
+Alternatively, just add version information to existing gradle plugin
 ie. 
 ```kotlin
 alias(libs.plugins.android.application) version "8.7.3"
 ```
 
 then press sync.
+
+### Remember
+
+After you have cloned a gitHub repo, you may encounter an error message especially when the
+codebase you wish to review is older than the AGP Android Studio is set to use.
+
+
+

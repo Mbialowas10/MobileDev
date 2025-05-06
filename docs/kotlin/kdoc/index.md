@@ -14,7 +14,7 @@ A side benefit to documenting your codebase is that you can understand
 purpose of code without going into its implementation. 
 
 ```kotlin
-/**
+/** 
  * Purpose - Search Screen - to lookup movies from TMDB API
  * @param modifier: Modifier - modifier for the composable
  * @param viewModel: MovieViewModel - view model for the composable

@@ -6,18 +6,19 @@ nav_order: 1
 
 # Welcome to Android Development
 
+Here you will find the ADEV-3007 Mobile Application Development Course notes. Topics are arranged inside Left-hand menu bar. You 
+can also make use of a search feature (top of each page) that allows you to search on keyterm or by topic.
 
+Please check back regularly, as these notes will be updated througout the term.
 
-Please check back regularly, as I will do my best to update these notes througout the term.
-
-
-
-_Ignore this below - this is for instructor purpose_ 
+_Ignore below - this is for instructor purposes._ 
 
 Note: to deploy locally use 
- bundle exec jekyll serve
+```kotlin
+bundle exec jekyll serve
+```
+To deploy publicly follow normal gitHub workflow.
 
- to post to git normal follow normal process
 
 
 

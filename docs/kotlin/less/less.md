@@ -6,10 +6,10 @@ nav_order: 1
 
 ## Concise Lanaguage - less is more ##
 
-Kotlin lets you work with read-only and write variables (aka as mutable variables). To make a variable
+Kotlin lets you work with immutable and mutable variables (read-only and writable variable types). To make a variable
 read only use val and to make a variable writable use var. Kotlin recommends
 using **val** over **var** whenever possible. This often is a convention
-in functional programming.
+used in functional programming.
 
 ```kotlin
 val PI = 3.1452 - constant as read-only
@@ -59,7 +59,7 @@ println(num.javaClass)
 
 #### 1. Main Function ####
 
- In order to run a Kotlin program code needs to be placed inside of a main function, similar to other 
+ In order to run a Kotlin program, code needs to be placed inside of a main function, similar to other 
  environments. Comments are ignored by the Kotlin interpreter.
 
 ```kotlin
@@ -74,11 +74,20 @@ println(num.javaClass)
     /*
         multiline comment 
     */ 
+
+    /**
+      * Purpose: kDoc - used for code documentation
+      * @param x: int 
+      * @param y: int
+      * @return sum: int
+      * @throws exception 
+      */
 ```
 
 
 #### 2. Semicolons not required ####
-**Note: runSomeFunction() does not have a semi-colon ending it
+**Note: runSomeFunction() above does not have a semi-colon ending it. It is typically to omit 
+the use of semi-colos after expresssions.
 ```kotlin
 10 * 5
 ```
