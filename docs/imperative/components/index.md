@@ -21,7 +21,7 @@ There are 2 build files as shown above.
 * Project level contains 2 plugins - these are used to complile and build your project. Module level gradle file 
 dependencies section contains 3rd party libraries you wish to add to your applicaton.
 
-**Please note** the dependencies section of module level gradle file doesn't contain any library version numbers. To locate version information, please see libs.versions.toml
+**Please note** the dependencies section of module level gradle file doesn't contain any library version numbers. To locate version information, please see the version catalog (libs.versions.toml).
 
 build.gradle.kts
 ```kotlin
@@ -37,7 +37,8 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 }
 ```
-libs.versions.toml
+
+Version Catalog - libs.versions.toml
 ```kotlin
 [versions]
 agp = "8.5.1"

@@ -6,11 +6,11 @@ nav_order: 3
 
 # Functions
 
-Functions are `fun`! Sometimes they consume values and sometimes they return values
+Functions are `fun`! Sometimes they consume values (as parameters or arguments) and sometimes they return values
 to the caller. If functions do not return a value then its return type is `Unit`. This 
 is is similar to the word `void` for those familar with Java programming Language.
 
-## Fx Declaration
+## Function Declaration
 ```kotlin
 // note this function is not consuming any values, but it is returning an Int
 fun addNumbers():Int{
@@ -36,13 +36,13 @@ The benefit to using named arguments that you don't have to pass arguments in a 
 
 ## Default paramater values
 ```kotlin
-    fun printArg(name:String = "N/A"){
+    fun printArg(name:String = "Class!"){
         println("Hello ${name}")
     }
 
     fun main() {
         printArg("Mike")    // Hello Mike
-        printArg()          // Hello N/A
+        printArg()          // Hello Class!
     }
 ```
 
@@ -67,8 +67,8 @@ Hello I'm a function without an newline
 
 ## Lambda Expressions
 
-Let's pretent we want to lowercase all characters in a string. This could be useful
-if we want to standarize form input.
+Suppose we want all lowercase characters in a string. This could be useful
+e.g. if we want to standarize form input.
 ```kotlin
 fun lowerCaseInput(text:String): String {
     return text.lowercase()
@@ -77,8 +77,10 @@ fun lowerCaseInput(text:String): String {
 fun main(){
     print(lowerCaseInput("Greetings!"))
 }
+
+// output:  greetings!
 ```
-We could write this more in an alternative format to make it more readable.
+Alternatively, a more concise version of the same may look something like?
 
 ```kotlin
     fun main(){
@@ -87,11 +89,10 @@ We could write this more in an alternative format to make it more readable.
     }
 ```
 
-```plaintext
-text:String represents the parameter
-function body appears after arrowhead ->
-```
-**Note** no return keyword used here
+**Notes:** 
+- text:String represents the parameter
+- function body appears after arrowhead ->
+- no return keyword used here
 
 Lambda expressions are used alot in JetPack Compose as we will learn later in the course.
 

@@ -23,7 +23,8 @@ nav_order: 3
   - `ListView`
   
 ### Identifying Views
-- All views should have a unique identifier to be able to use it (i.e., bind it to your code).
+- All views should have a unique identifier (id) so the UI can be bound to code. This allows developers to write code
+that interacts with controls allowing control UI behaviour to be changed.
   
 ```xml
 <Text android:id="@+id/mytext"/>
@@ -33,21 +34,15 @@ nav_order: 3
 - You can bind this layout to your Kotlin/Java code as follows:
   
 ```kotlin
-val label: TextView = findViewById(R.id.text)
+val label: TextView = findViewById(R.id.mytext)
 ```
 
 ### Attributes
-- Views have attribute properties similar to CSS in web development.
+- Views have attribute (properties) similar to CSS used in web development.
 
 ### Demonstration of Widgets
 - For demonstration of widgets, please see:
   - [widgetsDemo on GitHub](https://github.com/Mbialowas10/widgetsDemo)
+  - For more on Imperative UI common components, see [Imperative Common UI components](https://github.com/Mbialowas10/Common_UI_Components.git) link.
+  - For JetPack Compose equivlent, see [JetPack Compose Common UI components](https://github.com/Mbialowas10/Common_UI_Components_JetPack_Compose.git).
 
-
-
-
-
-
-- Added to GitHub for reference.
-
----

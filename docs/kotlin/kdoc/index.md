@@ -35,6 +35,6 @@ fun SearchScreen(
 }
 ```
 
-When a user type in function name or hovers mouse over function name, the following documentation appears.
+E.g. When a user types in a function name or hovers the mouse over function name, the following documentation appears.
 
 ![JDoc documentation](img/jdoc.jpg)
