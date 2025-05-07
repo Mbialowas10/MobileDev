@@ -30,6 +30,6 @@ rm -R ~/.gradle
 git clean -xfd
 
 // Then do a full rebuild
-./gradle assemble
+./gradlew assemble
 ```
 credits: *https://github.com/realm/realm-java/issues/5508*
