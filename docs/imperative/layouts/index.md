@@ -52,5 +52,5 @@ btnConstraint.setOnClickListener{
 
 Or Altertively to other applications within Android OS. eg. mail client, web browser, text to speach recognition, 
 or to social media platforms, etc...
----
+
 

@@ -5,6 +5,20 @@ nav_order: 7
 has_children: true
 ---
 
+## GitHub in Android Studio
+
+When learning a new programming language, framework, or architecture it can often 
+be good to review other projects that fall into that domain.
+
+In order to review someone elses project from gitHub import their code into Android Studio by
+going to File -> New -> Project from VCS
+
+![GitHub In Android Studio](img/github.png)
+
+Next, just key in URL for gitHub link and press clone
+
+![GitHub Repo Link](img/github_link.png)
+
 _When to clone or fork a gitHub repo?_
 
 The difference between cloning and forking a repository on GitHub lies in ownership and purpose:
