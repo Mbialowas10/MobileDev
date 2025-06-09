@@ -140,6 +140,9 @@ application.
 
 Note the use of accessing api key inside meta-data xml tag.
 
+By default the local.properties file should be added to .gitignore file. Always, a good idea 
+to open this file and confirm this before committing any changes to gitHub.
+
 
 
 
